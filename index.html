@@ -29,495 +29,1256 @@
 		<div class="slides">
 
 			<section>
-				<h2>Learning the Terminal and Git</h2>
+				<h1>Intro to React</h1>
+				<h3>Part 1</h3>
 			</section>
 
 			<section>
-				<h2>What is a Shell?</h2>
-				<p>A text-based command interpreter</p>
-				<p>The most common shell (and default on OS X) is BASH</p>
-				<p>For OS X, use a shell via the “Terminal” app</p>
+				<h2>Lecture 1: Frameworks/Libraries and Why React</h2>
+				<img src="images/react-1.svg" alt="React Logo" width="500px">
 			</section>
 
 			<section>
-				<h2>What is the Terminal?</h2>
-				<p>The terminal is an interface in which you can type and execute text based commands.</p>
-				<p class="fragment">This is how we access our Command Line Interface (CLI).</p>
-				<p class="fragment">aka: program like a hacker!</p>
+				<h2>JavaScript and Websites</h2>
+				<h2>A brief history</h2>
+				<img src="images/history.jpg" alt="History Lens">
 			</section>
 
 			<section>
-				<h2>What is the Terminal?</h2>
-				<img src="images/terminal.png" alt="">
+				<h2>Web 1.0: JS for Almost Nothing</h2>
+				<img src="https://raw.githubusercontent.com/AnnieCannons/ac-js-mvc-intro/gh-pages/images/web1point0.png" alt="HTML page connecting to a server">
 			</section>
 
 			<section>
-				<h2>Where to find the Terminal?</h2>
+				<h2>Web 2.0: JS for AJAX</h2>
+				<img src="https://raw.githubusercontent.com/AnnieCannons/ac-js-mvc-intro/gh-pages/images/web2point0.png" alt="Async JS">
+			</section>
+
+			<section>
+				<h2>Web Today: JS for Everything</h2>
+				<img src="https://raw.githubusercontent.com/AnnieCannons/ac-js-mvc-intro/gh-pages/images/web3point0.png" alt="JS connecting to all things">
+			</section>
+
+			<section>
+				<h2>Big JS Web Apps</h2>
+				<img src="https://raw.githubusercontent.com/AnnieCannons/ac-js-mvc-intro/gh-pages/images/webapps.png" alt="Image of Large Web Apps">
+			</section>
+
+			<section>
+				<h2>What does the JS do?</h2>
 				<ul>
-					<li>Finder</li>
-					<li>Applications</li>
-					<li>Utilities</li>
-				</ul>
-				<p>Click and drag the icon into your dock, then double click to open.</p>
-			</section>
-
-			<section>
-				<h2>The Prompt</h2>
-				<p>Usually shows your username and computer name (hostname).</p>
-				<p>It indicates that the shell is ready for you to enter a command.</p>
-				<img src="images/prompt.png" alt="">
-			</section>
-
-			<section>
-				<h2>The Current Directory</h2>
-				<p>pwd (Print Working Directory)</p>
-				<p>Type it whenever you want to see what directory (folder) you’re in.</p>
-				<p>TRY It!</p>
-			</section>
-
-			<section>
-				<h2>Directories</h2>
-				<p>Containers for files or other directories.</p>
-				<p>Also referred to as "folders".</p>
-				<p>Nested files and directories can be referenced using paths.</p>
-			</section>
-
-			<section>
-				<h2>UNIX File System</h2>
-				<img src="images/unix.png" alt="">
-				<p>In OS X, /home/you becomes /Users/you</p>
-			</section>
-
-			<section>
-				<h2>Server OS</h2>
-				<img src="images/unixtree.png" alt="">
-			</section>
-
-			<section>
-				<h2>File System Structure</h2>
-				<p>Varies between systems, but some common folders:</p>
-				<ul>
-					<li>/bin: Basic commands</li>
-					<li>/etc: System config files</li>
-					<li>/tmp: Temporary files</li>
-					<li>/usr: Regular user tools</li>
-					<li>/usr/local: Installed user software</li>
-					<li>/var: Data used by system</li></li>
+					<li class="fragment">Fetches data</li>
+					<li class="fragment">Processes and calculates data</li>
+					<li class="fragment">Uses the DOM API to interact with HTML (like w/jQuery)</li>
+					<li class="fragment">Reacts to events</li>
 				</ul>
 			</section>
 
 			<section>
-				<h2>Shortcuts</h2>
+				<h2>Use this tool!!!</h2>
+				<p>Seriously, <a href="https://frontendmasters.com/books/front-end-handbook/2017/">check it out</a></p>
+			</section>
+
+			<section>
+				<h2>...that's a lot of JS.</h2>
+				<p>Coursera: <strong>28,848 lines of JS code.</strong>.</p>
+			</section>
+
+			<section>
+				<h2>Let's make it manageable</h2>
 				<ul>
-					<li>Current Directory: (.)</li>
-					<li>Parent Directory: (..)</li>
-					<li>Home Directory: (~)</li>
-					<li>Root Directory: (/)</li>
+					<li class="fragment">Split into multiple files.</li>
+					<li class="fragment">Modularize the code into re-usable chunks.</li>
+					<li class="fragment">Use object-oriented concepts to organize code.</li>
+					<li class="fragment">Separate the code into "model" vs. "view"</li>
 				</ul>
 			</section>
 
 			<section>
-				<h2>Create your project</h2>
-				<p>How to create a file system for your website in your terminal.</p>
+				<h2>Model vs. View</h2>
+
+				<div style="position:relative;">
+					<svg height="400" width="800" xmlns=http://www.w3.org/2000/svg>
+					<circle cx="200" cy="200" r="200" fill="yellow" style="opacity:.5"/>
+					<circle cx="600" cy="200" r="200" fill="cyan" style="opacity:.5"/>
+					</svg>
+					
+					<div style="position:absolute;top: 60px; left: 180px; text-align:center;">
+						<p>"Model"</p>
+						<p>(Data)</p>
+						<p>Fetch data</p>
+						<p>Process data</p>
+						
+					</div>
+					
+					<div style="position:absolute;top: 60px; left: 520px; text-align:center;">
+						<p>"View"</p>
+						<p>(Presentation)</p>
+						<p>Create UI</p>
+						<p>Handle DOM Events</p>				
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Frameworks/Libraries</h2>
+					<img src="images/Framework-Grid.png" alt="Framework Grid">
+			</section>
+
+			<section>
+				<h2>Frameworks/Libraries</h2>
 				<ul>
-					<li class="fragment">ls: List what's in here</li>
-					<li class="fragment">cd: Change directory</li>
-					<li class="fragment">mkdir: Make a new directory</li>
-					<li class="fragment">touch: create or update an existing file's timestamp.The touch command expects the name of your new file as an argument.</li>
-					<li class="fragment">mv: move a file from one place to another (important note!)</li>
+					<li>MVC: Model View Controller (e.g. <a href="http://emberjs.com/">EmberJS</a>, <a href="http://angularjs.org/">AngularJS</a>)</li>
+					<li>MVP: Model View Presenter (e.g. <a href="http://backbonejs.org/">BackboneJS</a>)</li>
+					<li>MVVM: Model View ViewModel (e.g. <a href="http://knockoutjs.com/">KnockoutJS</a>)</li>
+					<li>MV*: Model View Something!</li>
+				</ul>
+				<p>
+					<a href="http://addyosmani.github.com/todomvc/">TodoMVC</a>
+				</p>
+			</section>
+
+			<section>
+				<h2>Why Can't I Use jQuery</h2>
+				<img src="images/but-why-gif-15.gif" alt="Why Gif">
+			</section>
+
+			<section>
+				<h2>The Old Way</h2>
+				<p>Using jQuery or vanilla JavaScript we would:</p>
+				<ul>
+					<li class="fragment">Write some HTML.</li>
+					<li class="fragment">In the JavaScript, write selectors for various buttons, form elements, and DOM elements that exist in the HTML.</li>
+					<li class="fragment">Listen for events on those elements - click, mouseover, scroll, double-click, keypress, etc.</li>
+					<li class="fragment">Write some code to react to those events - change the DOM as needed.</li>
 				</ul>
 			</section>
 
 			<section>
-				<h2>Flags</h2>
-				<p>Some commands have additional options that you can specify by using flags.</p>
-				<p>Flags are preceded by a hyphen, and are often a single character.</p>
-				<img src="images/ls.png" alt="">
-				<p>ls -a = show hidden files</p>
-				<p>ls -l = use a “long list” format (shows more verbose output)</p>
-			</section>
-
-			<section> 
-				<h2>Terminal Commands</h2>
+				<h2>Disadvantages of the Old Way</h2>
 				<ul>
-					<li class="fragment">The left/right arrow keys let you edit within a command
-					<li class="fragment">The up/down arrow keys let you select previous commands
-					<li class="fragment">CTRL+a goes to beginning of command, CTRL+e to the end.
-					<li class="fragment">The tab auto-completes filenames! Best friend!
-				</ul>
-     		</section>
-
-			 <section>
-				 <h2>Making and Removing Directories</h2>
-				 <p>Use the mkdir command to create a new empty directory.</p>
-				 <p>Use the rmdir command to remove an empty directory.</p>
-				 <p>Use rm -r to remove a non-empty directory...be careful!</p>
-				 <p>All 3 commands expect the name of a directory as an argument.</p>
-			 </section>
-    
-			<section>
-				<h2>Task I:</h2>
-				<ul>
-					<li>Create a "dev" folder in your main Documents folder</li>
-					<li>Move all of your current code folders from your Desktop to this file</li>
-					<li>Example: mv ~/Desktop/codingPractice ~/Documents/dev</li>
+					<li>Gets complex pretty quickly</li>
+					<li>Lots of forks - if/else if/else if/else</li>
+					<li>Easy to introduce bugs</li>
 				</ul>
 			</section>
 
 			<section>
-				<h2>Task II:</h2>
-				<p>Use the Terminal to make the folder system for your new Portfolio Project</p>
+				<h2>jQuery</h2>
 				<ul>
-					<li>Create the root folder in your new dev folder</li>
-					<li>Make sure to add folders for your CSS and JS</li>
-					<li>Add a new index.html file</li>
+					<li class="fragment"> Importance of Managing Data Flows</li>
+				</ul>
+				<br>
+				<img class="fragment" src="https://media.giphy.com/media/jPAdK8Nfzzwt2/giphy.gif" alt="Elmo Shrug" >
+			</section>
+
+			<section>
+				<h2>Highlights</h2>
+				<p>Lets read through <a href="https://www.sitepen.com/blog/2017/06/13/if-we-chose-our-javascript-framework-like-we-chose-our-music/">this</a></p>
+			</section>
+
+			<section>
+				<h2>Why React?</h2>
+				<ul>
+					<li class="fragment">Fun to use</li>
+					<li class="fragment">Lucrative</li>
+					<li class="fragment">Gives you a deep understanding of the issues facing the web</li>
+					<li class="fragment">Gives you a deep understanding of CS principles</li>
+					<li class="fragment">React Native!</li>
 				</ul>
 			</section>
 
 			<section>
-				<h2>View a File</h2>
-				<p>cat, more, less</p>
-				<p>Use the cat command to output (catenate) the contents of a file to the console.</p>
-				<p>Use the more or less commands to read a file:</p>
-					<ul>
-						<li>more allows you to step through the contents of a file a screen at a time</li>
-						<li>less allows you to step backwards or forwards</li>
-						<li>Press q to exit out of this mode</li>
-					</ul>
+				<h2>Popular Frameworks</h2>
+				<img src="images/react2.png" alt="Chart of 2017 Frameworks in JS" width="700px">
 			</section>
 
 			<section>
-				<h2>Try this!</h2>
-				<p>cat /var/log/wifi.log </p>
-			</section>
-
-			<section>
-				<h2>Edit a File</h2>
-				<p>You can use various editors built into bash:</p>
+				<h2>What is React.js?</h2>
 				<ul>
-					<li>$ vi myfile.txt</li>
-					<li>$ emacs myfile.txt</li>
-					<li>$ pico myfile.txt</li>
+					<li class="fragment">React is a JavaScript library for building interactive UIs.</li>
+					<li class="fragment">It was created by Facebook.</li>
+					<li class="fragment">It is used by Netflix, Air Bnb, Instagram, and many, many others.</li>
+					<li class="fragment">Fast, efficient, and highly reusable code.</li>
 				</ul>
-				<p>Or on a Mac, you can open with any desktop app:</p>
+			</section>
+
+			<section>
+				<h2>The React Way</h2>
+				<ul>
+					<li>Made up of individual reusable components.</li>
+					<li>Event handlers update the <span style="color:yellow">state.</span></li>
+					<li><span style="color:yellow">Components</span> render and re-render as needed, based on the state.</li>
+					<li>The library takes care of DOM updates using the <span style="color:yellow">virtual DOM</span>.</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Old Way</h2>
+				<img src="https://raw.githubusercontent.com/gdila/intro-to-react/master/dist/img/oldway.png" alt="Event Handlers and DOM Events">
+			</section>
+
+			<section>
+				<h2>New Way</h2>
+				<img src="https://raw.githubusercontent.com/gdila/intro-to-react/master/dist/img/reactway.png" alt="Using State">
+			</section>
+
+
+			<section>
+				<h1>Lecture 2: NPM and Build Tools</h1>
+			</section>
+
+			<section>
+				<h2>You are more than your code</h2>
+				<p>Ready to learn more?</p>
+				<img src="images/ww.gif" alt="Wonder Woman Gif">
+			</section>
+
+			<section>
+				<h2>What we will cover:</h2>
+				<ul>
+					<li>Modules</li>
+					<li>Packages</li>
+					<li>NPM</li>
+					<li>Build tools</li>
+				</ul>
+			</section>
+
+			<section>
+                <h2>Modules</h2>
+                <p class="fragment">A module is a JavaScript library/file that you can import into your code.</p>
+				<p class="fragment">This can be third party code or code files within your project</p>
 <pre><code>
-$ open -a TextEdit myfile.txt
+//------ lib.js ------
+export const sqrt = Math.sqrt;
+export function square(x) {
+	return x * x;
+}
+export function diag(x, y) {
+	return sqrt(square(x) + square(y));
+}
+
+//------ main.js ------
+import { square, diag } from 'lib';
+console.log(square(11)); // 121
+console.log(diag(4, 3)); // 5
 </code></pre>
-				<p>Or with the default editor:</p>
+			</section>
+
+            <section>
+                <h2>ES6 Alert!</h2>
+                <p class="fragment">ES6 has a new way of creating modules in JavaScript, this is something that most languages have but JS has not taken advantage of until now.</p>
+				<p class="fragment">ES6 modules have the same principle (ie having code in modules and then letting certain parts be accessed)</p>
+				<p class="fragment">Visual Example: Importing and Exporting</p>
+			</section>
+
+			<section>
+                <h2>Package vs Module</h2>
+                <p class="fragment">Difference between a module and a package?</p>
+                <p class="fragment">A module is a single JS file that has some functionality and won’t impact other code in the rest of the application unintentionally.</p>
+                <p class="fragment">A package is a directory with one or more modules inside of it and a package.json file that has information about the modules inside</p>
+			</section>
+			
+			<section>
+				<h2>Package.json</h2>
+				<p>This is the main source of information for your project.</p>
+				<img src="images/packagejson.jpg" alt="Package.json file">
+			</section>
+			
+			<section>
+                <h2>NPM: Node Package Manager</h2>
+                <p class="fragment" style="text-align:left">Utility for downloading packages for your JavaScript projects</p>
+                <p class="fragment" style="text-align:left">Can use to install front-end code, add dependencies, and build tools too!</p>
+                <p class="fragment" style="text-align:left"><a href="https://www.npmjs.com/">Check out the website</a></p>
+                <img class="fragment" src="images/npm.png" alt="NPM logo">
+            </section>
+
+            <section>
+                <h2>Using NPM</h2>
+                <p>Finding a project online or collaborating</p>
+                <ul>
+                    <li class="fragment">Clone the project that you want to work on with git (or sourcetree) and make sure it has a package.json</li>
+                    <li class="fragment">Then navigate to directory that has the source code.</li>
+                    <li class="fragment">Then type "npm install" in the Terminal. This will load your dependencies.</li>
+                    <li class="fragment">Then run the "npm start" command. This will only work if the program you downloaded has a start script.</li>
+                    <li class="fragment"><a href="https://docs.npmjs.com/misc.config">List of shorthands</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Exercise</h2>
+                <p>Clone <a href='https://github.com/Tmarty/legend-of-the-javascript-dragon.git'> this </a> repo, install npm, and start the npm scripts</p>
+                <img src="images/aziz.gif" alt="Aziz Ansari">
+            </section>
+
+            <section>
+                <h2>Using NPM</h2>
+                <p>Starting your own project</p>
+                <ul>
+                    <li class="fragment">Creating a package.json. This will track dependencies you are using in the project, and is an easy way to create scripts (instead of using tools like grunt and gulp)</li>
+                    <li class="fragment">The command is "npm init" in the directory you want.</li>
+                </ul>
+            </section>
+
+			<section>
+				<h2>Adding a dependency</h2>
+				<p><code>npm install --save [name-of-package]</code></p>
+			</section>
+
+			<section>
+				<h2>Your list of dependencies</h2>
+				<img src="images/dependencies.png" alt="Dependencies in Package.json">
+			</section>
+
+            <section>
+                <h2>Global Packages</h2>
+				<p class="fragment">A global package allows that package to be able to create commands that can be used in the command line (like yarn or npm or gulp). It can be used across your projectson your computer.</p>
+				<p class="fragment"><code>npm install -g [name-of-package]</code></p>
+                <p class="fragment">Command for seeing the global packages on your computer: npm list -g --depth 0 </p>
+            </section>
+
+            <section>
+                <h2>Semantic Versioning</h2>
+                <p>There is a structure to how developers keep track of the iterations of a package or dependency</p>
+                <p class="fragment">Example: 1.8.3 </p>
+                <ul>
+                    <li class="fragment">1 is the "major version" and if this is updated, it will break currently functionality</li>
+                    <li class="fragment">8 is the "minor version" and usually indicates a new feature has been added but functionality is not changed.</li>
+                    <li class="fragment">3 is a patch or small fix.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>Checking your versions</h2>
+                <ul>
+                    <li class="fragment">The tilde (~) matches the most recent minor version (the middle number). ~1.2.3 will match all 1.2.x versions but will miss 1.3.0.</li>
+                    <li class="fragment">The caret (^), on the other hand, is more relaxed. It will update you to the most recent major version (the first number). ^1.2.3 will match any 1.x.x release including 1.3.0, but will hold off on 2.0.0.</li>
+                    <li class="fragment">"npm update" will update all of your dependencies that are compatible.</li>
+                </ul>
+			</section>
+			
+			<section>
+				<h2>Difference between yard and npm</h2>
+				<img src="images/npmyarn.jpeg" alt="Npm Vs Yarn">
+			</section>
+
+			<section>
+				<h2>Build tools</h2>
+				<p>Build tools help you install tools, run code to help with develop, and helps get your code ready for production.</p>
+				<ul>
+					<li class="fragment">Install things.</li>
+					<li class="fragment">Do things.</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Build tools</h2>
+				<img src="images/buildtool.png" alt="Build Tools Grid">
+			</section>
+
+			<section>
+				<h2>Build tool tasks</h2>
+				<ul>
+					<li class="fragment">Creating folders and moving files into those folders</li>
+					<li class="fragment">Running a dev server</li>
+					<li class="fragment">Running unit tests with a single command</li>
+					<li class="fragment">Refreshing browser when I save a file</li>
+					<li class="fragment">Combining all JavaScript files into one, and all CSS files into one</li>
+					<li class="fragment">Minifying concatenated JavaScript and CSS files</li>
+					<li class="fragment">Modifying the placement of script tags on an html page</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Build tools</h2>
+				<p>A build is just a production ready version of your app</p>
+				<img src="images/codeready.png" alt="Configuring Code for Production">
+			</section>
+
+			<section>
+				<h2>Webpack</h2>
+				<p>Learning about <span>Webpack</span></p>
+				<a href="https://webpack.js.org/">Helpful Image</a>
+				<p>Let's talk through <a href="https://medium.com/javascript-training/beginner-s-guide-to-webpack-b1f1a3638460">this</a></p>
+			</section>
+
+			<section>
+				<h2>Webpack</h2>
+				<p>A module bundler (at it's core)</p>
+				<p class="fragment">But it also does a lot more!</p>
+				<ul>
+					<li class="fragment"><a href="https://medium.com/@tmtushar28/getting-started-with-webpack-aae37062c01">Transpiling</a></li>
+					<li class="fragment"><a href="https://babeljs.io/repl/">Babel</a></li>
+					<li class="fragment"><a href="https://eslint.org/">Linting</a></li>	
+				</ul>
+			</section>
+
+			<section>
+				<h2>More on webpack</h2>
+				<a href="https://blog.envylabs.com/getting-started-with-webpack-2-ed2b86c68783">here.</a>
+			</section>
+
+			<section>
+				<h2>A handy visual</h2>
+				<img src="images/hierarcy.png" alt="The Hierarchy of Tools">
+			</section>
+
+			<section>
+				<h2>A word on NPM scripts</h2>
+				<p>You can use NPM scripts to run build commands, like starting a dev server and building production code.</p>
+				<img src="images/npm-scripts.png" alt="NPM Scripts">
+				<a href="https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/">More here.</a>
+			</section>
+
+			<section>
+				<h2>Pluralsight Course</h2>
+				<p>Setting up a JavaScript Build Environment</p>
+				<p>Everything you need to know from starting to deployment..</p>
+				<a href="https://app.pluralsight.com/library/courses/javascript-development-environment/table-of-contents">Click here</a>
+			</section>
+
+			<section>
+				<h2>Is there an easier way?</h2>
+				<img src="images/please.gif" alt="Please Gif">
+			</section>
+
+			<section>
+				<h2>Create-React-App</h2>
+				<p>Facebook has made a handy tool to jumpstart your React App</p>
 <pre><code>
-$ open -t myfile.txt	
+npm create-react-app my-app-name
+cd my-app
+npm start
 </code></pre>
+				<p>Let's do it</p>
 			</section>
 
 			<section>
-				<h2>Fun tools</h2>
+				<h2>Folder Structure</h2>
+				<img src="images/folderstructure.png" alt="React Folder Structure" width="500px">
+			</section>
+
+
+			<!-- LECTURE 3 -->
+
+			<section>
+				<h2>Lecture 3: React Fundamental Principles</h2>
+			</section>
+
+			<section>
+				<h2>Components</h2>
 				<ul>
-					<li>ping</li>
-					<li>traceroute</li>
-					<li></li>
+					<li>A self-contained and reusable bit of code</li>
+					<li>One piece of a UI</li>
 				</ul>
+				<img src="images/component.png" alt="Website Components">
 			</section>
 
 			<section>
-				<h2>Resources</h2>
-				<ul>
-					<li><a href="https://code.tutsplus.com/tutorials/how-to-customize-the-command-prompt--net-20586">How to Customize the Command Prompt</a></li>
-					<li><a href="https://learncodethehardway.org/unix/">Learn Bash</li>
-				</ul>
+				<h2>Component Based Architecture</h2>
+				<img src="images/component2.png" alt="Website Component System">
 			</section>
 
 			<section>
-				<h2>GIT</h2>
+				<h2>Nesting Components</h2>
+				<p>Components can be resuable as well as flow into each other.</p>
+				<p>Your <code>entry file</code> is the JS file that is the topmost component in the tree.</p>
 			</section>
 
 			<section>
-				<h2>Version Control System</h2>
-				<p>What is it?</p>
-				<ul>
-					<li class="fragment">A system that keeps records of your changes.</li>
-					<li class="fragment">Allows for collaborative development</li>
-					<li class="fragment">Allows you to know who made what changes and when.</li>
-					<li class="fragment">Allows you to revert any changes and go back to a previous state.</li>
-				</ul>
-			</section>
-
-			<section>
-				<h2>Example Flow</h2>
-				<p>Alice creates this code and commits it as version 0:</p>
-<pre><code class="js" data-trim contenteditable>
-function addTwo(num){
-	return num + 2;
+				<h2>A Simple Component</h2>
+<pre><code>
+import React, { Component } from 'react';
+class HelloMessage extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello World!</h1>
+      </div>
+    );
+  }
 }
-</code></pre>
-				<p class="fragment">Alice edits and commits as version 1:</p>
-<pre class="fragment"><code class="js" data-trim contenteditable>
-function addThree(num){
-	return num + 3;
-}
+export default HelloMessage
 </code></pre>
 			</section>
 
 			<section>
-				<h2>Example flow 2</h2>
-				<p>Bob pulls the code from version 0 and edits:</p>
-<pre><code class="js" data-trim contenteditable>
-function addTwo(num){
-	if (num === Infinity){
-		alert("Cannot add to infinity!");
-	}
-	return num + 2;
-}
-</code></pre>
-				<p class="fragment">Bob pulls Alice's changes and it merges them:</p>
-<pre class="fragment"><code class="js" data-trim contenteditable>
-function addThree(num){
-	if (num === Infinity){
-		alert("Cannot add to infinity!");
-	}
-	return num + 3;
-}
-</code></pre>
+				<h2>Render</h2>
+				<p class="fragment">React components implement a render() method that takes input data and returns what to display. This example uses an XML-like syntax called JSX.</p>
+				<p class="fragment">The render() function creates the UI</p>
+				<p class="fragment">Other parts of the component interact with the data, add the styles (CSS), etc.</p>
 			</section>
 
+			<!-- Concepts: JSX -->
 			<section>
-				<h2>Version Control</h2>
-				<p>Version control systems are categorized as either "centralized" or "distributed"</p>
-				<p class="fragment"><span style="color: yellow">Centralized version control systems </span>are based on the idea that there is a single "central" copy of your project somewhere (probably on a server), and programmers will "commit" their changes to this central copy.</p>
-				<p class="fragment">In <span style="color: yellow">distributed systems</span>, every developers "clones" a copy of a repository and has the full history of the project on their own hard drive.</p>
-			</section>
-
-			<section>
-				<h2>Centralized vs distributed systems</h2>
-				<img src="images/versioncontrol" alt="">
-			</section>
-
-			<section>
-				<h2>What is Git?</h2>
-				<p class="fragment">Git is a popular version control system! There are others but this is considered by many to be the best.</p>
-				<p class="fragment">Git allows groups of people to work on the same documents (often code) at the same time, and without stepping on each other's toes. </p>
-			</section>
-
-			<section>
-				<h2>Goals of Git Design</h2>
+				<h2>JSX</h2>
 				<ul>
-					<li class="fragment">Fast--add to you team and code base quickly</li>
-					<li class="fragment">Each commit has a corresponding hash (it tracks the changes from everyone)</li>
-					<li class="fragment">Everyone has a local copy of the history of the source code</li>
+					<li class="fragment">A short-hand language that lets you create JavaScript objects using an HTML-like syntax.</li>
+					<li class="fragment">Generates JavaScript objects by matching HTML element names to components.</li>
 				</ul>
+				<p class="fragment">Example from live website.</p>
 			</section>
 
 			<section>
-				<h2>Install git	</h2>
-				<a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a>
-			</section>
-
-			<section>
-				<h2>How does git work?</h2>
-				<p class="fragment">It can be complicated at first, but there are a few key concepts. Don't get too worried about the names -- you will get them over time!</p>
-				<p class="fragment">Important GIT terms in the following slides will be in <span style="color:yellow">yellow</span>.</p>
-				<img src="https://media.tenor.co/images/4d46caa0ab53ae04ce457eba29721f19/raw" alt="" class="fragment">
-			</section>
-
-			<section>
-				<h2>Key Concept:<span style="color:yellow">Snapshots</span></h2>
+				<h2>Virtual DOM</h2>
 				<ul>
-					<li class="fragment">The way git keeps track of your code history</li>
-					<li class="fragment">Essentially records what all your files look like as a given point in time</li>
-					<li class="fragment">You decide when to take a snapshot and of what files</li>
-					<li class="fragment">You can do back and visit any snapshot</li>
+					<li class="fragment">A JavaScript object</li>
+					<li class="fragment">Created by the library auto-magically</li>
+					<li class="fragment">An in-memory representation of DOM nodes and elements</li>
+					<li class="fragment">The library updates the virtual DOM - then updates the DOM only when necessary. <a href="http://blog.reverberate.org/2014/02/react-demystified.html" target="_blank">Learn more</a></li>
 				</ul>
+				<img class="fragment" src="images/virtualdom.png" alt="Virtual DOM" width="500px">
 			</section>
 
 			<section>
-				<h2>Key Concept:<span style="color:yellow">Commit</span></h2>
-				<ul>
-					<li class="fragment">The act of creating a snapshot</li>
-					<li class="fragment">Can be a noun or a verb ("I committed code" or "I just made a new commit"</li>
-					<li class="fragment">Essentially, a project is made up of a bunch of commits</li>
-				</ul>
+				<h2>More on the virtual DOM</h2>
+				<a href="https://evilmartians.com/chronicles/optimizing-react-virtual-dom-explained">click here</a>
 			</section>
 
+			
 			<section>
-				<h2>Key Concept:<span style="color:yellow">Commit</span></h2>
-				<p>Commits contain three pieces of information.</p>
+				<h2>Your first React component</h2>
 				<ol>
-					<li class="fragment">Information about how the files changed from previously</li>
-					<li class="fragment">A reference to the commit that came before it (this is called the parent commit)</li>
-					<li class="fragment">A hashcode name (this will look something like: fb2dec48987dfgdf8798dfg7dfg87dfg79sdsfsdf7sdf78h9n</li>
+					<li>Go to <a href="http://jsbin.com/gekozos/3/edit?html,css,js,output" target="_blank">http://jsbin.com/gekozos/3/edit?html,css,js,output</a></li>
+					<li>We&rsquo;ll work together to make a component called <code class="inline">UserProfile</code>. It should include:
+						<ol>
+							<li>An avatar</li>
+							<li>Your first and last name</li>
+							<li>Your favorite color</li>
+						</ol>
+					</li>
 				</ol>
+				<p><small>Avatar photo: <code class="inline">https://randomuser.me/api/portraits/thumb/lego/8.jpg</code></small></p>
+			</section>
+
+			<!-- Rendering a component -->
+			<section>
+					<h2>Getting a component onto the page</h2>
+					<h3><code class="inline">ReactDOM.render</code></h3>
+					<p>A library method that we will use to place components into our webpage</p>
+<pre><code class="javascript">
+// The ReactDOM library provides an object 'ReactDOM' with a function 'render'
+
+// It needs the component and the target in the DOM
+ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
+//This is generally all the HTML you will have!
+</code></pre>
 			</section>
 
 			<section>
-				<h2>Key Concept:<span style="color:yellow">Repository</span></h2>
+				<h2>JSX Gotchas</h2>
 				<ul>
-					<li class="fragment">Often called a 'repo'</li>
-					<li class="fragment">A collection of all the files and the history of all those files</li>
-					<li class="fragment">Consists of all of your commits</li>
-					<li class="fragment">Place where all you hard work is stored!</li>
+					<li>Only one root element</li>
+					<li>To insert evaluated JS, use <code class="inline">{}</code>
+						<ul>
+							<li><code class="inline">{12 + 4}</code></li>
+							<li><code class="inline">{/* comment */}</code></li>
+						</ul>
+					</li>
+					<li>Special terms
+						<ul>
+							<li><strong>class:</strong> use <code class="inline">className</code> to assign CSS classes</li>
+						</ul>
+					</li>
+					<li>Learn more in the <a href="https://facebook.github.io/react/docs/jsx-in-depth.html" target="_blank">JSX docs</a></li>
 				</ul>
 			</section>
 
-			<section>
-				<h2>Key Concept:<span style="color:yellow">Repository</span></h2>
-				<ul>
-					<li class="fragment">Can live on a local machine (aka your computer) or on a remote server (like Github!)</li>
-					<li class="fragment">The act of copying a repository from a remote server is called <span style="color:yellow">cloning</span></li>
-					<li class="fragment">Cloning from a remote server allows teams to work together.</li>
-				</ul>
-			</section>
+				<!-- Dynamic Components -->
+				<section>
+					<h2>Props!</h2>
+				</section>
 
-			<section>
-				<h2>Key Concept:<span style="color:yellow">Repository</span></h2>
-				<ul>
-					<li class="fragment">The process of downloading commits that don't exist on your machine from a remote repository is called <span style="color:yellow">pulling</span> changes.</li>
-					<li class="fragment">The process of adding your local changes to the remote repository is called <span style="color:yellow">pushing</span> changes</li>
-					<p class="fragment"><iframe width="560" height="315" src="https://www.youtube.com/embed/vCadcBR95oU" frameborder="0" allowfullscreen></iframe>	</p>			</ul>
-			</section>
+				<section>
+					<h2>Props</h2>
+					<p>A property of a component that does not change. It is generally "passed down" from a parent component.</p>
+<pre><code>
+import React, { Component } from 'react';
+class HelloMessage extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello {this.props.name}!</h1>
+      </div>
+    );
+  }
+}
+export default HelloMessage
+</code></pre>
+				</section>
 
-			<section>
-				<h2>Key Concept:<span style="color:yellow">Branches</span></h2>
-				<ul>
-					<li class="fragment">All commits in git live on a branch</li>
-					<li class="fragment">But there can be many many branches</li>
-					<li class="fragment">The main branch in a project is called the <span style="color:yellow">master </span> branch.</li>
-				</ul>
-			</section>
+				<section>
+					<h2>Props</h2>
+<pre><code class="jsx">
+import React, { Component } from 'react';
+import HelloMessage from './hellomessage'
+class App extends Component {
+  render() {
+    return (
+      <div>
+        &lt;HelloMessage name="Coach" /&gt;
+	  </div>
+    );
+  }
+}
+export default App
+</code></pre>
+				</section>
 
-			<section>
-				<h2>Getting Started</h2>
-				<p class="fragment">You can create repositories that are version controlled on your own computer. These are called local repositories.</p>
-				<p class="fragment">The cool thing about distributed systems is that this repo acts the same way as if it were a remote repo.</p>
-			</section>
+				<section>
+					<h2>Making Components Dynamic</h2>
+					<ul>
+						<li>Components use &lsquo;props&rsquo; or properties for dynamic bits of data and functionality.</li>
+						<li>Props are expressed with the same syntax as HTML attributes, i.e. <code class="inline">name={someValue}</code></li>
+						<li>A prop can be set to any JS value
+							<ul>
+								<li>String, Array, Object, Function, etc.</li>
+								<li>Other React components</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
 
-			<section>
-				<h2>Creating a local repository</h2>
-				<p class="fragment">When creating a new project on your local machine using git, you will first create a new repository.</p>
-				<p class="fragment">To use git, we will use the terminal.</p>
-				<p class="fragment">To begin, open the Terminal, and move to where you want to place your project on your local machine using the 'cd' (change directory) command. </p>
-<pre class="fragment"><code class="js" data-trim contenteditable>
-Lauras-MacBook-Pro:~ laurahackney$ cd Documents
-Lauras-MacBook-Pro:~ laurahackney$ cd dev
-Lauras-MacBook-Pro:~ laurahackney$ mkdir newProject
-Lauras-MacBook-Pro:~ laurahackney$ cd newProject
+				<section>
+					<h2>Another props example</h2>
+<pre><code class="javascript">
+// WelcomeText accepts the prop 'name'
+&lt;WelcomeText name={'Adam'} />
+	
+// WelcomeText component
+class WelcomeText extends React.Component{
+  render (){
+   return (
+    &lt;p>Welcome to the class, {props.name}!&lt;/p>
+   );
+  }
+};
+
+// will output
+// &lt;p>Welcome to the class, Adam!&lt;/p>
+</code></pre>
+											
+				</section>
+
+
+				<section>
+					<h1>Intro to React</h1>
+					<h3>Part 2</h3>
+				</section>
+
+				<section>
+					<h2>Lecture 1</h2>
+					<p>Objects, 'this', and ES6</p>
+					<img src="https://media.tenor.com/images/bc261041d540051d249383ea65d0a49f/tenor.gif" alt="You Got This">
+				</section>
+
+				<!-- JS Objects -->
+				<section>
+					<h2>Objects: A quick review</h2>
+					<ul>
+						<li class="fragment">What is an object?</li>
+						<li class="fragment">How do you make an object?</li>
+						<li class="fragment">Key/value pairs</li>
+						<li class="fragment">Adding methods to objects</li>
+					</ul>
+				</section>
+
+				<!-- JS Objects -->
+				<section>
+					<h2>What is an object?</h2>
+					<ul>
+						<li>A way to describe concepts in an application or program.
+							<ul>
+								<li>Customer</li>
+								<li>Product</li>
+								<li>Order</li>
+							</ul>
+						</li>
+						<li>A &ldquo;thing&rdquo; with properties and methods
+							<ul>
+								<li>Properties describe the object</li>
+								<li>Methods are things the object can do</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Make an object -->
+				<section>
+					<h2>How to make an object</h2>
+					<p>With an object literal:</p>
+<pre><code class="javascript">
+var contact0 = {
+  firstName: 'Simba',
+  lastName: 'The Lion',
+  organization: 'Pride Rock'
+};</code></pre>
+					<p>Adding properties:</p>
+<pre><code class="javascript">
+  var contact1 = {};
+  contact1.firstName = 'Pumba';
+  contact1.lastName = 'The Warthog';
+  contact1['organization'] = 'The Desert';
 </code></pre>	
-			</section>
+				</section>
 
-			<section>
-				<h2>Creating a local repository</h2>
-				<p>To initialize a git repository in the root of the folder, run the git init command.</p>
-<pre><code class="js" data-trim contenteditable>
-Lauras-MacBook-Pro:newProject laurahackney$ git init
+				<section>
+					<h2>How to make an object</h2>
+					<p>Objects can be nested:</p>
+<pre><code class="javascript">
+var contact2 = {
+  firstName = 'Ariel', 
+  lastName = 'The Mermaid',
+  organization: {
+    name: 'Disney',
+    website: 'http://disney.com'
+	}
+};</code></pre>
+				</section>
 
-Initialized empty Git repository in /Users/laurahackney/Documents/dev/newProject
+				<!-- Accessing properties of objects -->
+				<section>
+					<h2>Accessing properties of objects</h2>
+					<p>Two ways:</p>
+					<p>With dot notation:</p>
+<pre><code class="javascript">
+contact0.firstName;
+contact1.lastName;
 </code></pre>
-			</section>
-
-			<section>
-				<h2>Add a new File to the Repo</h2>
-				<p>Go ahead and add a new file to the project by running a touch command.</p>
-<pre><code class="js" data-trim contenteditable>
-Lauras-MacBook-Pro:newProject laurahackney$ touch index.html
-Lauras-MacBook-Pro:newProject laurahackney$ ls
+					<p>With square bracket notation:</p>
+<pre><code class="javascript">
+contact0['firstName'];
+contact2['lastName'];
 </code></pre>
-				<p class="fragment">Once you have added or modified files in a folder containing a git repo, git will notice that changes have been made inside the repo. But, git won't officially keep track of the file (that is, put it in a commit), unless you tell it to.</p>
-				<p class="fragment">Visual studio code!</p>
-			</section>
+				</section>
 
-			<section>
-				<h2>Git status check</h2>
-				<p>After creating the new file, you can use the git status command to see which files git knows exist.</p>
-<pre><code class="js" data-trim contenteditable>
-Lauras-MacBook-Pro:newProject laurahackney$ git status
-On branch master
-Initial commit
-Untracked files: 
+				<!-- Maps, Dictionnaries, Hashes -->
+				<section>
+					<h2>Maps and Key/Values</h2>
+					<p>An object is often used as a <span class="blue">map</span>, or a key/value store.</p>
+					<p>These are data structures that are indexed by <span class="blue">keys</span>.</p>
+<pre><code class="javascript">
+var appData = {
+  users: [{
+    name: 'Rihanna',
+    id: 2
+   }, {
+    name: 'Tina Fey',
+    id: 1
+   }
+  ],
+  books: [{
+    title: 'Green Eggs &amp; Ham',
+    author: 'Dr. Suess',
+    ISBN13: '978-0394800165'
+   }
+  ]
+};
 </code></pre>
-			<p class="fragment">What is this is saying is, "Hey, we noticed you created a new file, but we aren't going to do anything with it until you tell us to add it."</p>
-			</section>
+				</section>
 
-			<section>
-				<h2>Running a commit</h2>
-				<p>To add a file to a comit, you first need to add it to the <span style="color:yellow">staging environment</span>. To go this, you can use the git add command</p>
-<pre><code class="js" data-trim contenteditable>
-Lauras-MacBook-Pro:newProject laurahackney$ git add index.html 
+				<section>
+					<h2>Using maps</h2>
+<pre><code>
+class WelcomeIndividual extends React.Component{
+  render(){
+    return (
+      &lt;li>Hi there {this.props.name}&lt;/li&gt;
+	);
+  }
+};
+class WelcomeList extends React.Component {
+  render() {
+	const nameArray = ['Harrison', 'Adam', 'Laura'];
+	return (
+      &lt;div&gt;
+        {nameArray.map((item, id) => 
+          &lt;WelcomeIndividual name={item} key={id} /&gt;
+        )}
+      &lt;/div&gt;
+    );
+  }
+};
 </code></pre>
-				<p class="fragment">Once you've used the git add command to add all the files you want to the staging environment, you can then tell git to package them into a commit using the git commit command</p>
-<pre class="fragment"><code class="js" data-trim contenteditable>
-Lauras-MacBook-Pro:newProject laurahackney$ git commit -m "Initial commit!"
-</code></pre>	
-				<p class="fragment">Check your work with git log</p>
-			</section>
+				</section>
 
-			<section>
-				<h2>Review</h2>
-				<ul>
-					<li>git init</li>
-					<li>git add</li>
-					<li>git status</li>
-					<li>git commit -m "text"</li>
-					<li>git log</li>
-				</ul>
-			</section>
-
-			<section>
-				<h2>Exercises</h2>
-				<p>Look over this one: <a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository">Setting up a Repo</a></p>
-				<p>We will do this one together. Do the first nine exercises. <a href="https://try.github.io/levels/1/challenges/1">Exercises</a></p>
-				<p>For you to look at later <a href="http://women2.com/2016/02/09/git-101-for-beginners/?hvid=3PXmn9&utm_source=Women+2.0+Mailing+List&utm_campaign=b06f62550e-08-24-15_Weekly_Newsletter&utm_medium=email&utm_term=0_8e8e6a075d-b06f62550e-310404969">Git 101</a></p>
-			</section>
-
-			<section>
-				<h2>Let's make this easier</h2>
-				<img src="images/easy.jpeg" alt="">
-			</section>
-
-			<section>
-				<h2>Sourcetree</h2>
-				<p>Go to sourcetreeapp.com</p>
-				<p>Visual tour and logging in with a Github account</p>
-			</section>
-
-			<section>
-				<h2>Github!</h2>
-				<img src="images/codercat.jpg" width= "500px" alt="">
-			</section>
-
-			<section>
-				<h2>What is Github?</h2>
-				<p>www.github.com</p>
-				<ul>
-					<li class="fragment">It is the largest web-based git repository hosting service</li>
-					<li class="fragment">Allows for code collaboration with anyone online</li>
-					<li class="fragment">Adds a bunch of features like bug tracking!</li>
-					<li class="fragment">Check out our AnnieCannons github Repo</li>
-				</ul>
-			</section>
-
-			<section>
-				<h2>Using Remote Repos</h2>
-				<p class="fragment">To synchronize with a remote repository, first tell Git about it</p>
-<pre class="fragment"><code class="js" data-trim contenteditable>
-Lauras-MacBook-Pro:newProject laurahackney$ git remote add origin git://github.com/username/repo
+				<section>
+					<h2>Maps</h2>
+					<p>map() iterates over a list, transforms each member of that list, and returns another list of the same size with the transformed members (example: transforming list of strings to uppercase)</p>
+<pre><code>
+var array1 = [1, 4, 9, 16];
+// pass a function to map
+const map1 = array1.map(x => x * 2);		
+console.log(map1);
+// expected output: Array [2, 8, 18, 32]	
 </code></pre>
-				<p class="fragment">To push changes, use git push</p>
-<pre class="fragment"><code class="js" data-trim contenteditable>
-Lauras-MacBook-Pro:newProject laurahackney$ git push origin master
-</code></pre>
-				<p class="fragment">To pull changes, use git pull</p>
-<pre class="fragment"><code class="js" data-trim contenteditable>
-Lauras-MacBook-Pro:newProject laurahackney$ git pull origin master
-</code></pre>
-				<p class="fragment">OR! Use sourcetree!!</p>
-			</section>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">Helpful MDN</a>
+				</section>
 
-			<section>
-				<h2>Fork a Repo!</h2>
-			</section>
+				<section>
+					<h2>forEach</h2>
+					<p>forEach() iterates over a list and applies some operation with side effects to each list member (example: saving every list item to the database)</p>
+<pre><code>
+var words = [{name:'one'}, {name:'two'}, {name: 'three'}, {name:'four'}];
 
-			<section>
-				<h2>AC Algorithms</h2>
-				<p>Your first pull!</p>
-			</section>
+words.forEach(function(word) {
+  word.name = "bananas";
+})
+
+console.log(words)
+</code></pre>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">Helpful MDN</a>
+				</section>
+
+				<!-- Methods and 'this' -->
+				<section>
+					<h2><code class="inline">this</code> and object methods</h2>
+					<ul>
+						<li>A method is a function that is set as the value of a property</li>
+						<li>The <code class="inline">this</code> keyword refers to the enclosing object</li>
+					</ul>
+<pre><code class="javascript">
+var currentUser = {
+  firstName: 'Sydney',
+  middleInitial: 'J',
+  lastName: 'Bristow',
+  fullName: function() {
+    return this.firstName + ' ' + this.lastName;
+  }
+};
+console.log(currentUser.fullName());
+function getMiddleInitial() {
+	return this.middleInitial;
+}
+currentUser.mI = getMiddleInitial;
+console.log(currentUser.mI()); // logs 'J'
+</code></pre>
+				</section>
+
+				<!-- React props are objects -->
+				<section>
+					<h2>React props === objects</h2>
+<pre><code class="javascript">
+class Welcome extends React.Component {
+  render(){
+    return (
+      &lt;p>Welcome {this.props.firstName} {this.props.lastName}!&lt;/p>
+    );
+  }	
+};
+
+// We pass the props like this
+&lt;Welcome firstName={'Billie'} lastName={'Jensen'} />
+
+// order doesn't matter for props
+&lt;Welcome lastName={'Lee'} firstName={'Brennen'} /></code></pre>
+				</section>
+
+				<!-- Exercise: Project Widget Props -->
+				<section>
+					<h2>Let&rsquo;s Develop It!</h2>
+					<ul>
+						<li>Go back to the profile widget component we built earlier
+							<ul>
+								<li>Or you can start from <a href="http://jsbin.com/namupub/1/edit?html,css,js,output" target="_blank">this one</a>.</li>
+							</ul>
+						</li>
+						<li>Make the component dynamic:
+							<ul>
+								<li>Identify what props the component needs.</li>
+								<li>Change the <code class="inline">UserProfile</code> function so it accepts props</li>
+								<li>Add dynamic values to the JSX</li>
+								<li>Pass props to the <code class="inline">UserProfile</code> component</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Break -->
+
+				<section>
+					<h2>ES6</h2>
+					<ul>
+						<li>let, const</li>
+						<li>class syntax</li>
+						<li>arrow functions</li>
+					</ul>
+					<a href="https://docs.google.com/presentation/d/1ayo6JgXGZ-dfClAwhJxSN1PM11fJG6G6O32XwE5Tokg/edit?usp=sharing">Let's check this out!</a>
+				</section>
+	
+
+				<section>
+					<h1>Lecture 2</h1>
+					<p>State and the Constructor</p>
+					<img src="images/bringit.jpeg" alt="Bring it on!">
+				</section>
+
+				<!-- Stateful components -->
+				<!-- State basics -->
+				<section>
+					<h2>State</h2>
+					<ul>
+						<li class="fragment">A JavaScript object</li>
+						<li class="fragment">A set of key/value pairs that represents the current state of the application.</li>
+					</ul>
+<pre class="fragment"><code class="javascript">
+var me = {
+  mood: 'happy',
+  age: 42,
+  sleeping: false
+};</code></pre>
+				</section>
+
+				<section>
+					<h2>Temperature Example</h2>
+					<p>Describe the state of water as temperature changes.</p>
+					<img src="http://78.media.tumblr.com/ebec1a8dd2cb8185796862967fa356ab/tumblr_nafjmhkXCn1tx65hdo1_500.gif" alt="Frozen gif">
+				</section>
+
+				<section>
+					<h2>Let's see it in code:</h2>
+<pre><code class="javascript">
+render() {
+  var stateOfMatter;
+  if (this.state.currentTemp <= 32) {
+    stateOfMatter = 'Solid';
+  } else if (this.state.currentTemp >= 212) {
+    stateOfMatter = 'Gas';
+  } else {
+    stateOfMatter = 'Liquid';
+  }
+  return (
+   <div>
+    <p>At { this.state.currentTemp }°F, water is considered to be a 
+       { stateOfMatter } state of matter.</p>
+   </div>
+  );
+}
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Where is state stored?</h2>
+					<p>Local state is stored in the component itself! In something call the constructor. It is outside of the render function.</p>
+<pre><code class="javascript">
+import React from 'react';
+class Temperature extends React.Component{
+  constructor(){
+   super();
+   this.state = {
+     temperature: 45
+   }
+  }
+  render(){
+	  //rest of render function
+  }
+}
+</code></pre>
+				</section>
+
+				<section>
+					<h2>How to set the State?</h2>
+					<p class="fragment">There is a method called setState()! woohoo!</p>
+					<p class="fragment">When your user is interacting with your app, you can update the state based on their input, or based on data your app is receiving from a database.</p>
+					<p class="fragment">you can include this.setState({temperature: 70}) in your program as the code of a function</p>
+				</section>
+
+				<section>
+<pre><code class="javascript">
+class Temperature extends React.Component{
+ constructor(){
+  super();
+  this.state = {
+    temperature: 45
+   }
+  this.increaseTemp = this.increaseTemp.bind(this);
+}
+
+increaseTemp(){
+  this.setState(prevState => ({
+    temperature: prevState.temperature + 15
+  }));
+}
+</code></pre>
+</section>
+				<section>
+<pre><code class="javascript">
+render() {
+  var stateOfMatter;
+   if (this.state.temperature <= 32) {
+     stateOfMatter = 'Solid';
+   } else if (this.state.temperature >= 212) {
+     stateOfMatter = 'Gas';
+   } else {
+     stateOfMatter = 'Liquid';
+   }
+  return (
+    <div>
+     <p>`At ${ this.state.temperature }°F, water is considered to be a ${ stateOfMatter } state of matter.`</p>
+     <button onClick={this.increaseTemp}>Heat It Up!</button>
+    </div>
+  );
+ }
+}
+export default Temperature
+</code></pre>
+				</section>
+
+				<section>
+					<h2>This is why the virtual DOM is awesome!!!!</h2>
+					<p>yay react!</p>
+					<img src="http://78.media.tumblr.com/8f3b9548952b76790dd1d7eda4d3870a/tumblr_mrr9z9Yubn1qk08n1o1_500.gif" alt="I want you to win">
+				</section>
+
+				<section>
+					<h2>Exercise</h2>
+					<p>Make sure you got the original code to work.</p>
+					<p>How would you add a button to decrease the temperature?</p>
+					<p>How would you reset the temperature to 45?</p>
+				</section>
+
+				<section>
+					<h2>React stateful components</h2>
+					<ul>
+						<li>React components built with JSX just like before</li>
+						<li>Plus&hellip;
+							<ul>
+								<li>State</li>
+								<li>Mutation methods (ways to change or update the state)</li>
+							</ul>
+						</li>
+					</ul>
+					<p>A presentational component:</p>
+<pre><code class="javascript">
+class Welcome extends React.Component{
+ render() {
+  return (
+    &lt;p>Welcome {this.props.firstName} {this.props.lastName}!&lt;/p>
+  );
+};</code></pre>
+					
+					</section>
+					
+					<section>
+						<h2>A stateful component</h2>
+<pre><code class="javascript">
+class Welcome extends React.Component{
+  constructor(props){
+   super();
+   this.state = {
+     count: 10
+   }
+  }
+  render() {
+    return (
+      &lt;p>
+       Welcome {this.props.firstName} {this.props.lastName}!
+	   Count: {this.state.count}
+      &lt;/p>
+   );
+}
+})</code></pre>
+				</section>
+
+
+				<!-- Exercise: Stateful Component -->
+				<section>
+					<h2>Exercise</h2>
+					<ul>
+						<li>Start from <a href="http://jsbin.com/popenul/edit?html,js,output" target="_blank">here</a>.</li>
+						<li>Fix the broken counter</li>
+						<li>Make sure the value of the counter is visible to the user.</li>
+					</ul>
+				</section>
+
+				<!-- Forms -->
+				<section>
+						<h2>Forms!</h2>
+						<p>Forms in React present some interesting challenges.</p>
+						<ul>
+							<li>Unlike other elements, form controls can be mutated by users.
+								<ul>
+									<li><code class="inline">&lt;input></code></li>
+									<li><code class="inline">&lt;select></code></li>
+									<li><code class="inline">&lt;textarea></code></li>
+								</ul>
+							</li>
+						</ul>
+						<p><br>Try <a href="http://jsbin.com/tululup/1/edit?html,js,output" target="_blank">this example</a> and see what happens!</p>
+						<p>Learn more about forms in <a href="https://facebook.github.io/react/docs/forms.html" target="_blank">the docs</a>.</p>
+					</section>
+	
+					<!-- Form inputs -->
+					<section>
+						<h2>Form Inputs</h2>
+						<p>Input controls in React provide a few props that are designed to keep the UI state information synchronized with the underlying DOM:</p>
+						<ul>
+							<li><code class="inline">value</code>: the current value of the input</li>
+							<li><code class="inline">defaultValue</code>: used if the value is null or undefined</li>
+							<li><code class="inline">onChange</code>: a general event handler, use instead of onInput</li>
+						</ul>
+					</section>
+	
+					<!-- Exercise: Forms -->
+					<section>
+						<h2>Form Example</h2>
+						<ul>
+							<li><a href="http://jsbin.com/tiveduj/edit?html,js,output" target="_blank">Start here</a>.</li>
+							<li>Take a look at the <code class="inline">handleChange</code> method.</li>
+							<li>How do we get the value the user entered in the field?</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Remember!</h2>
+						<p>React has one-way data flow. You can't send data (as state or props) up to the parent. Only props can be sent down from a parent to a child.</p>
+					</section>
+	
+					<!-- Tips for using forms -->
+					<section>
+						<h2>React Form Tips</h2>
+						<ul>
+							<li>Keep the form element's state in sync with React
+								<ul>
+									<li>Use the state to set the value of the form element</li>
+									<li>Use a method to update the state each time the value of the form element changes</li>
+								</ul>
+							</li>
+							<li>Focus on one-way data flow</li>
+	
+						</ul>
+					</section>				
+
+
+				<section>
+					<h1>Lecture 3</h1>
+					<p>Component Lifecycle Methods and Styled Components</p>
+					<img src="http://i0.kym-cdn.com/photos/images/original/000/392/134/149.gif" alt="Dancing">
+				</section>
+
+				<!-- Component Lifecycle -->
+				<section>
+					<h2>Component Lifecycle</h2>
+					<p>Components have a lifecycle in three phases:</p>
+					<ol>
+						<li><strong>Mounting:</strong> a new instance of a component will be added to a view</li>
+						<li><strong>Updating:</strong> rendering updates</li>
+						<li><strong>Unmounting:</strong> an instance of a component is removed from the view</li>
+					</ol>
+					<p>Learn more about the lifecycle in <a href="https://facebook.github.io/react/docs/react-component.html" target="_blank">the docs</a>.</p>
+				</section>
+
+				<!-- Lifecycle example -->
+				<section>
+					<h2>Component Lifecycle</h2>
+<pre><code class="javascript">
+class MyComponent extends React.Component{
+
+// required
+render() { return &lt;p>Hi!&lt;/p>; },
+// Mounting: called once immediately before rendering
+componentWillMount() { ... },
+// Mounting: called once immediately after rendering
+componentDidMount() { ... },
+// Updating: called when new props are passed in
+// ** may happen on 2nd and subsequent renders
+componentWillReceiveProps(nextProps) {
+	if (this.props.thing !== nextProps.thing ) {
+		.. do something about it
+	}
+}
+
+};</code></pre>
+				</section>
+
+				<section>
+						<h2>Component Lifecycle</h2>
+	<pre><code class="javascript">
+class MyComponent extends React.Component{
+// Updating: Invoked before rendering when new props or state are being received.
+// return true to allow render, return false to prevent
+shouldComponentUpdate(nextProps, nextState) {
+	return false;
+},
+// Updating: an update will occur
+componentWillUpdate(nextProps, nextState) { },
+// Updating: an update did occur
+componentDidUpdate(prevProps, prevState) { },
+// Unmounting:
+componentWillUnmount() {
+	// do clean up to avoid memory leaks!
+}
+	};</code></pre>
+					</section>
+
+				<!-- Exercise: Lifecyle -->
+				<section>
+					<h2>When would you use these?</h2>
+					<ul>
+						<li>User authentication!</li>
+						<li>App configuration in your root component.</li>
+						<li>Connecting to external APIs</li>
+						<li>Loading data!</li>
+					</ul>
+					<p></p>
+					<a href="https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1">More Examples</a>
+				</section>
+
+				<section>
+					<h2>Remember!</h2>
+					<p>Just because you are running a componentWillMount() function, doesn't mean it will finish before your render() is complete.</p>
+				</section>
+
+				<section>
+					<h2>Review</h2>
+					<ul>
+						<li class="fragment">JSX — Allows us to write HTML like syntax which gets transformed to lightweightJavaScript objects.</li>
+						<li class="fragment">Virtual DOM — A JavaScript representation of the actual DOM.</li>
+						<li class="fragment">React.Component — The way in which you create a new component.</li>
+						<li class="fragment">render (method) — Describes what the UI will look like for the particular component.</li>
+						<li class="fragment">ReactDOM.render — Renders a React component to a DOM node.</li>
+						<li class="fragment">state — The internal data store (object) of a component.</li>
+						<li class="fragment">constructor (this.state) - The way in which you establish the initial state of a component.</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h2>Review</h2>		
+					<ul>
+						<li class="fragment">setState — A helper method used for updating the state of a component and re-rendering the UI</li>
+						<li class="fragment">props — The data which is passed to the child component from the parent component.</li>
+						<li class="fragment">Component LifeCycle Methods (componentDidMount — Fired after the component mounted, componentWillUnmount — Fired before the component will unmount</li>
+						<li class="fragment">Events (onClick, onSubmit, onChange)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Don't forget about CSS!</h2>
+					<img src="https://media2.giphy.com/media/PW24kUmUv3vlm/giphy.gif" alt="Crying">
+				</section>
+
+				<section>
+					<h2>Seriously?</h2>
+					<p>We have already added HTML (JSX) into our JavaScript, surely we won't add CSS into our JavaScript as well....</p>
+					<img src="http://rs210.pbsrc.com/albums/bb245/donmsaul/Meme%20GIF/seriously.gif~c200" alt="Seriously?">
+				</section>
+
+				<section>
+					<h2>You have Options!</h2>
+					<ul>
+						<li class="fragment">CSS like you have always done it! (don't forget className)</li>
+						<li class="fragment">CSS Modules</li>
+						<li class="fragment">CSS in Stylesheets</li>
+						<li class="fragment">CSS-in-JS and styled.components</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Do yourself a favor...</h2>
+					<p>Check out React packages for styling (including <a href="https://react-bootstrap.github.io/">react-bootstrap</a>)</p>
+					<p><a href="https://codeburst.io/styling-in-react-5aafecc5edd3?mkt_tok=eyJpIjoiWmpCbU1tTTNOVGMxTlRNNSIsInQiOiJmdEN4QitsQ2lXWWgyS3BucWVnRHNETEQ3RWNkOGdEZVwvYmJMZWI2Um5oenFmY2lYZk1FZGJBZkZVWU9qSUJ3Ykk1YlREVmt4b1wvbHNLM1FTaUNTZVFRY1pScTd0eEpYc0l4NGxcL0xPVnRiNmRlRDd5YVwvTGxIRldJc2hUZ2JtNlkifQ%3D%3D">Click here for more on styling</a></p>
+				</section>
 
 		<!-- Last Slide -->
 		<section style="text-align: left;">

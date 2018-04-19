@@ -1,22 +1,20 @@
-# AnnieCannons Introduction to the Terminal, Git, and Github
+# AnnieCannons Introduction to React
 
-This module will introduce how to use the command line on your computer. This will also cover using Git, a version control software, and Github, a website that will allow us to create remote code repositories. It includes:
+This module will introduce how and why to use this popular JavaScript framework. It includes:
 
 <ul>
-<li>Accessing the Command Line</li>
-<li>Creating and moving files in the terminal</li>
-<li>Understanding the file system</li>
-<li>Version Control and distributed systems</li>
-<li>Using Git</li>
-<li>Creating local repositories</li>
-<li>Linking to remore repos (Github)</li>
-<li>Pushing, pulling, and committing!</li>
-<li>Using Sourcetree</li>
-<li>Creating your algorithms folder</li>
+<li>MV*</li>
+<li>Core features of React</li>
+<li>How to use NPM and your tools</li>
+<li>Components, State, and Data Flow -- oh my!</li>
+<li>Props and Constructors</li>
+<li>ES6 tools</li>
+<li>React Native</li>
+<li>Styling Components</li>
+<li>Using XCode</li>
+<li>Putting it all together</li>
 </ul>
 
-# Resources
-1) <a href="https://www.git-tower.com/blog/command-line-cheat-sheet/">CLI CheatSheet</a>
 
   ## For contributors
 
