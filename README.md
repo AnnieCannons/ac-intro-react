@@ -9,9 +9,7 @@ This module will introduce how and why to use this popular JavaScript framework.
 <li>Components, State, and Data Flow -- oh my!</li>
 <li>Props and Constructors</li>
 <li>ES6 tools</li>
-<li>React Native</li>
 <li>Styling Components</li>
-<li>Using XCode</li>
 <li>Putting it all together</li>
 </ul>
 
