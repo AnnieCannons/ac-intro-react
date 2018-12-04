@@ -303,13 +303,18 @@ console.log(diag(4, 3)); // 5
                     <li class="fragment">Then run the "npm start" command. This will only work if the program you downloaded has a start script.</li>
                     <li class="fragment"><a href="https://docs.npmjs.com/misc.config">List of shorthands</a></li>
                 </ul>
-            </section>
+			</section>
+			
+			<section>
+				<h2>Difference between yard and npm</h2>
+				<img src="images/npmyarn.jpeg" alt="Npm Vs Yarn">
+			</section>
 
             <section>
                 <h2>Exercise</h2>
-                <p>Clone <a href='https://github.com/Tmarty/legend-of-the-javascript-dragon.git'> this </a> repo, install npm, and start the npm scripts</p>
+                <p>Clone <a href='https://github.com/samuelmeuli/lyrics-poster'> this </a> repo, yarn install, and yarn start</p>
                 <img src="images/aziz.gif" alt="Aziz Ansari">
-            </section>
+			</section>
 
             <section>
                 <h2>Using NPM</h2>
@@ -355,11 +360,6 @@ console.log(diag(4, 3)); // 5
                     <li class="fragment">The caret (^), on the other hand, is more relaxed. It will update you to the most recent major version (the first number). ^1.2.3 will match any 1.x.x release including 1.3.0, but will hold off on 2.0.0.</li>
                     <li class="fragment">"npm update" will update all of your dependencies that are compatible.</li>
                 </ul>
-			</section>
-			
-			<section>
-				<h2>Difference between yard and npm</h2>
-				<img src="images/npmyarn.jpeg" alt="Npm Vs Yarn">
 			</section>
 
 			<section>
@@ -446,7 +446,7 @@ console.log(diag(4, 3)); // 5
 				<h2>Create-React-App</h2>
 				<p>Facebook has made a handy tool to jumpstart your React App</p>
 <pre><code>
-npm create-react-app my-app-name
+npx create-react-app my-app-name
 cd my-app
 npm start
 </code></pre>
